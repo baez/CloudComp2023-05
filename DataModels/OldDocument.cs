@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataModels
 {
-    public class Document
+    public class OldDocument
     {
         public string Id { get; set; }
         public string Title { get; set; }
