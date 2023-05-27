@@ -15,17 +15,31 @@ namespace CloudComp2023_05
 {
     public class Startup
     {
+        private IConfiguration configuration;
+
+        public IConfiguration Configuration { get { return configuration; } }
+
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            this.configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            ////Initialize the builder 
+            //var builder = new ConfigurationBuilder()
+            //              .SetBasePath(Environment.CurrentDirectory)
+            //              .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            //              .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", optional: true)//To specify environment
+            //              .AddEnvironmentVariables();   //You can add if you need to read environment variables.
+
+            ////Build the configuration
+            //this.configuration = builder.Build();
+
+            services.AddSingleton<IConfiguration>(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

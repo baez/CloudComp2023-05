@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CloudComp2023_05.Controllers
 {
@@ -11,6 +11,9 @@ namespace CloudComp2023_05.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
+        private string _connString =  "";
+        private readonly IConfiguration _configuration;
+
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -18,22 +21,30 @@ namespace CloudComp2023_05.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
+            var connectionString = this._configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
         }
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            // ===========
+            var sdConnect = new DatabaseConnection();
+            var dbStatus = sdConnect.GetDBStatus(this._connString);
+            // ===========
+
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var result = Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+                Summary = index < 5 ? Summaries[rng.Next(Summaries.Length)] : $"Database Status: {dbStatus}"
+            });
+
+            return result.ToArray();
         }
     }
 }

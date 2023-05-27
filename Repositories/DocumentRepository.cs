@@ -5,6 +5,8 @@ namespace Repositories
 {
     public class DocumentRepository
     {
-
+        public DocumentRepository() 
+        {
+        }
     }
 }
