@@ -1,15 +1,8 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CloudComp2023_05
 {
@@ -28,16 +21,6 @@ namespace CloudComp2023_05
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
-            ////Initialize the builder 
-            //var builder = new ConfigurationBuilder()
-            //              .SetBasePath(Environment.CurrentDirectory)
-            //              .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-            //              .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", optional: true)//To specify environment
-            //              .AddEnvironmentVariables();   //You can add if you need to read environment variables.
-
-            ////Build the configuration
-            //this.configuration = builder.Build();
 
             services.AddSingleton<IConfiguration>(Configuration);
         }

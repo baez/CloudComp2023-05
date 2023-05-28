@@ -11,7 +11,7 @@ namespace CloudComp2023_05.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private string _connString =  "";
+        private string _connString = "";
         private readonly IConfiguration _configuration;
 
         private static readonly string[] Summaries = new[]
@@ -25,15 +25,15 @@ namespace CloudComp2023_05.Controllers
         {
             _logger = logger;
             _configuration = configuration;
-            var connectionString = this._configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
         }
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
             // ===========
+            var connectionString = this._configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
             var sdConnect = new DatabaseConnection();
-            var dbStatus = sdConnect.GetDBStatus(this._connString);
+            var dbStatus = sdConnect.GetDBStatus(connectionString);
             // ===========
 
             var rng = new Random();
