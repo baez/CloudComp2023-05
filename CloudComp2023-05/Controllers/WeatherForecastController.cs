@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,7 @@ namespace CloudComp2023_05.Controllers
     {
         private string _connString = "";
         private readonly IConfiguration _configuration;
-
+        private readonly IDocumentRepository _documentRepository;
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -23,17 +25,19 @@ namespace CloudComp2023_05.Controllers
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger, IConfiguration configuration)
         {
-            _logger = logger;
-            _configuration = configuration;
+            this._logger = logger;
+            this._configuration = configuration;
+            this._connString = this._configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
+            this._documentRepository = new DocumentRepository(this._connString);
         }
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
             // ===========
-            var connectionString = this._configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
             var sdConnect = new DatabaseConnection();
-            var dbStatus = sdConnect.GetDBStatus(connectionString);
+            var dbStatus = sdConnect.GetDBStatus(this._connString);
+            this._documentRepository.CreateTable();
             // ===========
 
             var rng = new Random();

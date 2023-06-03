@@ -2,8 +2,8 @@
 
 namespace Interfaces
 {
-    public class IDocumentRepository
+    public interface IDocumentRepository
     {
-
+        void CreateTable();
     }
 }
