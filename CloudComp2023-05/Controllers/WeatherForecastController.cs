@@ -1,4 +1,5 @@
-﻿using Interfaces;
+﻿using DataModels;
+using Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -32,23 +33,26 @@ namespace CloudComp2023_05.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public IList<Employee> Get()
         {
             // ===========
             var sdConnect = new DatabaseConnection();
             var dbStatus = sdConnect.GetDBStatus(this._connString);
-            this._documentRepository.CreateTable();
+            // this._documentRepository.CreateTable();
+            // this._documentRepository.InsertEmployee("H002", "Richard Drake");
+
+            var employees = this._documentRepository.GetEmployees();
             // ===========
 
-            var rng = new Random();
-            var result = Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = index < 5 ? Summaries[rng.Next(Summaries.Length)] : $"Database Status: {dbStatus}"
-            });
+            //var rng = new Random();
+            //var result = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            //{
+            //    Date = DateTime.Now.AddDays(index),
+            //    TemperatureC = rng.Next(-20, 55),
+            //    Summary = index < 5 ? Summaries[rng.Next(Summaries.Length)] : $"Database Status: {dbStatus}"
+            //});
 
-            return result.ToArray();
+            return employees;
         }
     }
 }
