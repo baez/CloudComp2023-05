@@ -4,9 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Repositories;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace CloudComp2023_05.Controllers
 {
@@ -36,11 +34,11 @@ namespace CloudComp2023_05.Controllers
         public IList<Employee> Get()
         {
             // ===========
-            var sdConnect = new DatabaseConnection();
-            var dbStatus = sdConnect.GetDBStatus(this._connString);
+            // var sdConnect = new DatabaseConnection();
+            // var dbStatus = sdConnect.GetDBStatus(this._connString);
             // this._documentRepository.CreateTable();
-            // this._documentRepository.InsertEmployee("H002", "Richard Drake");
-
+            
+            this._documentRepository.InsertEmployee("H003", "Tom Hardy");
             var employees = this._documentRepository.GetEmployees();
             // ===========
 
