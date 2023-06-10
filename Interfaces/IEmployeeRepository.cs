@@ -4,9 +4,8 @@ using System.Collections.Generic;
 
 namespace Interfaces
 {
-    public interface IDocumentRepository
+    public interface IEmployeeRepository
     {
-        void CreateTable();
         void InsertEmployee(string id, string name);
 
         IList<Employee> GetEmployees();

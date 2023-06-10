@@ -8,26 +8,21 @@ using System.Data;
 
 namespace Repositories
 {
-    public class DocumentRepository : IDocumentRepository
+    public class EmployeeRepository : IEmployeeRepository
     {
         private readonly string _connString;
-        public DocumentRepository(string connString) 
+        public EmployeeRepository(string connString) 
         {
             this._connString = connString;
         }
 
-        public void CreateTable()
-        {
-            string sqlStatement = "CREATE TABLE ROLE(ID VARCHAR(20) NOT NULL, NAME VARCHAR(50) NOT NULL)";
-            
-            using (SqlConnection connection = new SqlConnection(_connString))
-            {
-                SqlCommand sqlCommand = new SqlCommand(sqlStatement, connection);
-                connection.Open();
-                sqlCommand.ExecuteNonQuery();
-            }
-        }
 
+        /// <summary>
+        /// modify this to accept filter values based on name and Id
+        /// e.g. id = "001", Name = "Ram"
+        /// it should return all records start Id with 001 OR names that start with Ram
+        /// </summary>
+        /// <returns></returns>
         public IList<Employee> GetEmployees()
         {
             string sqlStatement = "SELECT TOP 10 * FROM dbo.Employee";

@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudComp2023-05", "CloudComp2023-05\CloudComp2023-05.csproj", "{E23E84EA-EC29-4A7D-BF20-94F909D1AC24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudComp2023-05", "CloudComp2023-05\CloudComp2023-05.csproj", "{E23E84EA-EC29-4A7D-BF20-94F909D1AC24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{C119E917-1467-4244-B372-69AB40B2B3DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{C119E917-1467-4244-B372-69AB40B2B3DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{30F034B7-EFC7-4532-BD3B-BF04D139236C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{30F034B7-EFC7-4532-BD3B-BF04D139236C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModels", "DataModels\DataModels.csproj", "{6193D010-7140-4B62-95CB-68A58E30AAA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataModels", "DataModels\DataModels.csproj", "{6193D010-7140-4B62-95CB-68A58E30AAA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerQueue", "CustomerQueue\CustomerQueue.csproj", "{D14702DE-E68B-451F-851E-87A0267E78B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6193D010-7140-4B62-95CB-68A58E30AAA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6193D010-7140-4B62-95CB-68A58E30AAA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6193D010-7140-4B62-95CB-68A58E30AAA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D14702DE-E68B-451F-851E-87A0267E78B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D14702DE-E68B-451F-851E-87A0267E78B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D14702DE-E68B-451F-851E-87A0267E78B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D14702DE-E68B-451F-851E-87A0267E78B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

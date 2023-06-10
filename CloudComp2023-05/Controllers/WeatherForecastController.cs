@@ -14,7 +14,7 @@ namespace CloudComp2023_05.Controllers
     {
         private string _connString = "";
         private readonly IConfiguration _configuration;
-        private readonly IDocumentRepository _documentRepository;
+        private readonly IEmployeeRepository _documentRepository;
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -27,7 +27,7 @@ namespace CloudComp2023_05.Controllers
             this._logger = logger;
             this._configuration = configuration;
             this._connString = this._configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
-            this._documentRepository = new DocumentRepository(this._connString);
+            this._documentRepository = new EmployeeRepository(this._connString);
         }
 
         [HttpGet]
