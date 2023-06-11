@@ -31,15 +31,15 @@ namespace CloudComp2023_05.Controllers
         }
 
         [HttpGet]
-        public IList<Employee> Get()
+        public string Get()
         {
             // ===========
             // var sdConnect = new DatabaseConnection();
             // var dbStatus = sdConnect.GetDBStatus(this._connString);
             // this._documentRepository.CreateTable();
             
-            this._documentRepository.InsertEmployee("H003", "Tom Hardy");
-            var employees = this._documentRepository.GetEmployees();
+            // this._documentRepository.InsertEmployee("H003", "Tom Hardy");
+            // var employees = this._documentRepository.GetEmployees();
             // ===========
 
             //var rng = new Random();
@@ -50,7 +50,7 @@ namespace CloudComp2023_05.Controllers
             //    Summary = index < 5 ? Summaries[rng.Next(Summaries.Length)] : $"Database Status: {dbStatus}"
             //});
 
-            return employees;
+            return "Hello world";
         }
     }
 }
