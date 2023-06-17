@@ -50,7 +50,7 @@ namespace CloudComp2023_05.Controllers
             //    Summary = index < 5 ? Summaries[rng.Next(Summaries.Length)] : $"Database Status: {dbStatus}"
             //});
 
-            return "Hello world";
+            return "Hello world from ";
         }
     }
 }

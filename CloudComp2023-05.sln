@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\In
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataModels", "DataModels\DataModels.csproj", "{6193D010-7140-4B62-95CB-68A58E30AAA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerQueue", "CustomerQueue\CustomerQueue.csproj", "{D14702DE-E68B-451F-851E-87A0267E78B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderingQueues", "CustomerQueue\OrderingQueues.csproj", "{D14702DE-E68B-451F-851E-87A0267E78B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestQueueServiceTests", "RequestQueueServiceTests\RequestQueueServiceTests.csproj", "{C35145F0-243F-413A-AF15-40C912460258}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModelTests", "DataModelTests\DataModelTests.csproj", "{06287279-FCE5-4FD3-B771-CB358DEC1024}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{D14702DE-E68B-451F-851E-87A0267E78B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D14702DE-E68B-451F-851E-87A0267E78B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D14702DE-E68B-451F-851E-87A0267E78B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C35145F0-243F-413A-AF15-40C912460258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35145F0-243F-413A-AF15-40C912460258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C35145F0-243F-413A-AF15-40C912460258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C35145F0-243F-413A-AF15-40C912460258}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06287279-FCE5-4FD3-B771-CB358DEC1024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06287279-FCE5-4FD3-B771-CB358DEC1024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06287279-FCE5-4FD3-B771-CB358DEC1024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06287279-FCE5-4FD3-B771-CB358DEC1024}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

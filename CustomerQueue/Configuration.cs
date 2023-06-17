@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CustomerQueue
+namespace OrderingQueue
 {
     public static class Configuration
     {
-        public static string QueueConnString = "YourConneString";
+        public static string QueueConnString = "CoonString";
     }
 }

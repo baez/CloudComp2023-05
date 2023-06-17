@@ -35,7 +35,7 @@ namespace Repositories
 
             foreach (DataRow row in dataTable.Rows) 
             {
-                var e = new Employee();
+                var e = new Manager(10);
                 e.Id = (string)row["ID"];
                 e.Name = (string)row["Name"];
                 employees.Add(e);
