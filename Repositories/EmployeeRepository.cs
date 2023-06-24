@@ -44,6 +44,28 @@ namespace Repositories
             return employees;
         }
 
+        public IList<Employee> GetEmployees(string id)
+        {
+            string sqlStatement = $"SELECT * FROM dbo.Employee WHERE id='{id}'";
+
+            IList<Employee> employees = new List<Employee>();
+    
+            var connection = new SqlConnection(this._connString);
+            var command = new SqlCommand(sqlStatement, connection);
+            connection.Open();
+
+            var dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                var e = new Manager(10);
+                e.Id = (string)dataReader["ID"];
+                e.Name = (string)dataReader["Name"];
+                
+                employees.Add(e);
+            }
+            return employees;
+        }
+
         public void InsertEmployee(string id, string name)
         {
             string sqlStatement = $"INSERT INTO dbo.Employee (ID, NAME) VALUES ('{id}', '{name}')";

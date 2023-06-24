@@ -1,4 +1,5 @@
 ﻿using Azure.Storage.Queues;
+using Repositories;
 using System;
 
 namespace OrderingQueue
@@ -7,6 +8,8 @@ namespace OrderingQueue
     {
         static void Main(string[] args)
         {
+            // var repository = new EmployeeRepository();
+
         }
     }
 }

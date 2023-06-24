@@ -9,5 +9,7 @@ namespace Interfaces
         void InsertEmployee(string id, string name);
 
         IList<Employee> GetEmployees();
+
+        IList<Employee> GetEmployees(string id);
     }
 }
