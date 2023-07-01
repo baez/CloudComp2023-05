@@ -10,7 +10,7 @@ namespace DataModelTests
         public void GetRemaningVacationDays_WhenDayTakenOff_ShouldDeduct()
         {
             // Arrange
-            var manager = new Manager(15);
+            var manager = new Manager("123", "name", 15);
             manager.TakeDaysOff(2);
 
             // Act
@@ -24,7 +24,7 @@ namespace DataModelTests
         public void GetRemaningVacationDays_WhenExtraDaysWorkedAdded_ShouldCalculate()
         {
             // Arrange
-            var manager = new Manager(15);
+            var manager = new Manager("123", "name", 15);
             manager.AddExtraDaysWorked(1);
 
             // Act

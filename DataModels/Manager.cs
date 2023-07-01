@@ -6,8 +6,11 @@ namespace DataModels
 {
     public class Manager : Employee
     {
-        public Manager(int vacationDaysOffCurrentYear) 
-            : base(vacationDaysOffCurrentYear)
+        public Manager(
+            string id,
+            string name,
+            int vacationDaysOffCurrentYear) 
+            : base(id, name, vacationDaysOffCurrentYear)
         {
         }
     }

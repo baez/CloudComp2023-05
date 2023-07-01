@@ -35,9 +35,10 @@ namespace Repositories
 
             foreach (DataRow row in dataTable.Rows) 
             {
-                var e = new Manager(10);
-                e.Id = (string)row["ID"];
-                e.Name = (string)row["Name"];
+                var id = (string)row["ID"];
+                var name = (string)row["Name"];
+                var e = new Manager(id, name, 10);
+                
                 employees.Add(e);
             }
 
@@ -57,9 +58,10 @@ namespace Repositories
             var dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
-                var e = new Manager(10);
-                e.Id = (string)dataReader["ID"];
-                e.Name = (string)dataReader["Name"];
+                var tempId = (string)dataReader["ID"];
+                var name = (string)dataReader["Name"];
+
+                var e = new Manager(tempId, name, 10);
                 
                 employees.Add(e);
             }

@@ -6,16 +6,23 @@ namespace DataModels
 {
     public abstract class Employee
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public int DaysOffCurrentYear { get; protected set; }
+        private int DaysOffCurrentYear;
 
-        public int VacationDaysCurrentYear { get; protected set; }
+        private int VacationDaysCurrentYear;
 
-        public int ExtraDaysWorkedCurrentYear { get; protected set; }
+        private int ExtraDaysWorkedCurrentYear;
 
-        public Employee(int vacationDaysOffCurrentYear)
+        public string Id { get; private set; }
+
+        public string Name { get; private set; }
+
+        public Employee(
+            string id,
+            string name,
+            int vacationDaysOffCurrentYear)
         {
+            this.Id = id;
+            this.Name = name;
             this.VacationDaysCurrentYear = vacationDaysOffCurrentYear;
         }
 
