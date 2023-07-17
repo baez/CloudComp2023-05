@@ -1,5 +1,4 @@
-﻿using DataModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Interfaces
@@ -8,6 +7,6 @@ namespace Interfaces
     {
         void InsertEmployee(string id, string name);
 
-        IList<Employee> GetEmployees(string id);
+        IList<IEmployee> GetEmployees(string id);
     }
 }
