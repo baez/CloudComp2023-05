@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Interfaces;
 
 namespace DataModels
 {
-    public abstract class Employee
+    public abstract class Employee : IEmployee
     {
         private int DaysOffCurrentYear;
 
