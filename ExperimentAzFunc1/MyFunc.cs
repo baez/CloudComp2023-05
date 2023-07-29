@@ -10,6 +10,15 @@ using Newtonsoft.Json;
 
 namespace ExperimentAzFunc1
 {
+    /// <summary>
+    /// sample request: http://localhost:7168/api/MyFunc?name=romo
+    ///         MyFunc: [GET,POST] http://localhost:7168/api/MyFunc
+    ///    MyQueueFunc: queueTrigger
+    /// MyFunc puts messages on myqueue20230722
+    /// And, MyQueueFunc is listening to myqueue20230722
+    /// Picks up messages from the queue for processing as they become available.
+    /// 
+    /// </summary>
     public static class MyFunc
     {
         [FunctionName("MyFunc")]
