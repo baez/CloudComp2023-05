@@ -17,7 +17,7 @@ namespace ExperimentAzFunc1
     /// MyFunc puts messages on myqueue20230722
     /// And, MyQueueFunc is listening to myqueue20230722
     /// Picks up messages from the queue for processing as they become available.
-    /// 
+    /// TODO: Add a function that listens for items from the Queue and triggers an http call to another function
     /// </summary>
     public static class MyFunc
     {

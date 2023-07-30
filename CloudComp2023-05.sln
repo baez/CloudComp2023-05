@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestQueueServiceTests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataModelTests", "DataModelTests\DataModelTests.csproj", "{06287279-FCE5-4FD3-B771-CB358DEC1024}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExperimentAzFunc1", "ExperimentAzFunc1\ExperimentAzFunc1.csproj", "{6FE868B4-4FFC-458C-A28F-D9B2C38FEFB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExperimentAzFunc1", "ExperimentAzFunc1\ExperimentAzFunc1.csproj", "{6FE868B4-4FFC-458C-A28F-D9B2C38FEFB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
