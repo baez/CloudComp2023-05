@@ -12,7 +12,7 @@ namespace ExperimentAzFunc1
 {
     /// <summary>
     /// sample request: http://localhost:7168/api/MyFunc?name=romo
-    ///         MyFunc: [GET,POST] http://localhost:7168/api/MyFunc
+    ///    Http Methods accepted: [GET,POST]
     ///    MyQueueFunc: queueTrigger
     /// MyFunc puts messages on myqueue20230722
     /// And, MyQueueFunc is listening to myqueue20230722

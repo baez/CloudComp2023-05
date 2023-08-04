@@ -28,7 +28,7 @@ namespace CloudComp2023_05.Controllers
         }
 
         [HttpGet]
-        public IList<Employee> Get(string id)
+        public IEnumerable<IEmployee> Get(string id)
         {
             if (string.IsNullOrWhiteSpace(id)) 
             {
