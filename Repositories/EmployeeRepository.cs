@@ -45,11 +45,11 @@ namespace Repositories
             return employees;
         }
 
-        public IList<Employee> GetEmployees(string id)
+        public IEnumerable<IEmployee> GetEmployees(string id)
         {
             string sqlStatement = $"SELECT * FROM dbo.Employee WHERE id='{id}'";
 
-            IList<Employee> employees = new List<Employee>();
+            var employees = new List<Employee>();
     
             var connection = new SqlConnection(this._connString);
             var command = new SqlCommand(sqlStatement, connection);

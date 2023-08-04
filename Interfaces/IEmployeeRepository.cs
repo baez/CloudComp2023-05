@@ -7,6 +7,6 @@ namespace Interfaces
     {
         void InsertEmployee(string id, string name);
 
-        IList<IEmployee> GetEmployees(string id);
+        IEnumerable<IEmployee> GetEmployees(string id);
     }
 }
